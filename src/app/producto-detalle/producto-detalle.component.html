@@ -1,0 +1,93 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<link rel="stylesheet" href="/assets/css/formularios.css">
+<div id="main-content">
+  <div class="contenedor"> 
+    <div class="encabezado ">
+      <h1>Detalles del producto</h1>
+    </div>  
+    <div class="cuerpo ">
+      <div class="field ">
+        <label class="label">Nombre</label>
+        <div class="control has-icons-left">
+            <input class="input" type="text" placeholder="Nombre del producto" [(ngModel)]="producto.nombre">
+        </div>
+      </div>
+      <div class="columns">
+        <div class="field column ">
+          <label class="label">Marca</label>
+          <div class="control has-icons-left">
+              <input class="input" type="text" placeholder="Nombre del producto" [(ngModel)]="producto.marca">
+          </div>
+        </div>
+        <div class="field column">
+          <label class="label">Modelo</label>
+          <div class="control has-icons-left">
+              <input class="input" type="text" placeholder="Nombre del producto" [(ngModel)]="producto.modelo">
+          </div>
+        </div>
+      </div>
+      <div class="columns">
+        <div class="field column">
+          <label class="label">Precio</label>
+          <div class="control has-icons-left">
+            <input class="input" type="number"  [(ngModel)]="producto.precio">
+            <span class="icon is-small is-left">
+                <i class="fa-solid fa-dollar-sign"></i>
+            </span>
+          </div>
+        </div>
+        <div class="field column">
+          <label class="label">Código</label>
+          <div class="control has-icons-left">
+              <input class="input" type="number" placeholder="Código del producto" [(ngModel)]="producto.codigo" disabled>
+              <span class="icon is-small is-left">
+                  <i class="fa-solid fa-tag"></i>
+              </span>
+          </div>
+        </div>
+
+        
+      </div>
+      
+      <div class="columns">
+        <div class="field column">
+          <label class="label">Imagen actual</label>
+          <img src="{{producto.imgurl}}" alt="" width="200px" height="200px">
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Imagen</label>
+        <div class="control has-icons-left">
+          <input type="file" id="imagen" name="imagen" [(ngModel)]="producto.imgurl"
+          accept="image/png, image/jpeg, image/gif" (change)="fotoseleccionada($event)" >
+        </div>
+      </div>
+      <div class="field columns">
+        <div class="column">
+          <button class="button is-warning is-light" (click)="modificarPro()" >
+            <span>
+              <i class="fa-solid fa-pencil"></i>
+              Modificar
+            </span>
+          </button>
+        </div>
+        <div class="column">
+          <button class="button is-danger is-light" (click)="eliminarPro()">
+            <span>
+              <i class="fa-solid fa-trash"></i>
+              Eliminar
+            </span>
+          </button>
+      </div>
+      <div class="column">
+        <button class="button is-info is-light" [routerLink] = "['/productos']">
+          <span>
+            <i class="fa-solid fa-arrow-left"></i>
+            Regresar
+          </span>
+        </button>
+      </div>
+      
+    </div>
+  </div>
+</div>

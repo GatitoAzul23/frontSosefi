@@ -1,0 +1,151 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<link rel="stylesheet" href="/assets/css/formularios.css">
+
+<div id="main-content">
+<div class="contenedor"> 
+    <div class="encabezado ">
+        <h1>Detalles de la cotización</h1>
+    </div>  
+    <div class="cuerpo ">
+        <div class="columns">
+            <div class="field column">
+                <label class="label">Folio de la cotización.</label>
+                <div class="control">
+                    <input class="input" type="text"  [(ngModel)]="servicio.idCotizacion" disabled>
+                </div>
+            </div>
+            
+            <div class="field column">
+                <label class="label">Correo</label>
+                <div class="control has-icons-left">
+                    <input class="input" type="text"  [(ngModel)]="servicio.correo" disabled>
+                    <span class="icon is-small is-left">
+                        <i class="fa-solid fa-envelope"></i>
+                    </span>
+                </div>
+            </div>
+            
+        </div>
+        <div class="columns">
+            <div class="field column">
+                <label class="label">Nombre del cliente</label>
+                <div class="control has-icons-left">
+                    <input class="input" type="text"  [(ngModel)]="servicio.nombreCliente" disabled>
+                    <span class="icon is-small is-left">
+                        <i class="fa-solid fa-user"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="field column">
+                <label class="label">Apellido del cliente</label>
+                <div class="control has-icons-left">
+                    <input class="input" type="text"  [(ngModel)]="servicio.apellidoCliente" disabled>
+                    <span class="icon is-small is-left">
+                        <i class="fa-solid fa-user"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="columns">
+            <div class="field column">
+                <label class="label">Fecha</label>
+                <div class="control has-icons-left">
+                    <input class="input" type="text"  [(ngModel)]="servicio.fecha" disabled>
+                    <span class="icon is-small is-left">
+                        <i class="fa-solid fa-calendar"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="field column">
+                <label class="label">Hora</label>
+                <div class="control has-icons-left">
+                    <input class="input" type="text"  [(ngModel)]="servicio.hora" disabled>
+                    <span class="icon is-small is-left">
+                        <i class="fa-solid fa-clock"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="columns">
+            <div class="field column">
+                <label class="label">Domicilio</label>
+                <div class="control has-icons-left">
+                    <input class="input" type="text"  [(ngModel)]="servicio.lugar" disabled>
+                    <span class="icon is-small is-left">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="columns">
+            <div class="field column">
+                <label class="label">Costo de instalación/mantenimiento.</label>
+                <div class="control has-icons-left">
+                    <input class="input" type="number" min="0" [(ngModel)]="cobro.manoObra">
+                    <span class="icon is-small is-left">
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+        
+    
+        <br><br>
+        <h3 class="subtitulo">Material:</h3>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Producto</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Subtotal</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr  *ngFor = "let prod of productos"> 
+                <td>{{prod.nombre}}</td>
+                <td>{{prod.precio}}</td>
+                <td>{{prod.cantidad}}</td>
+                <td>{{prod.subtotal}}</td>
+                <td></td>
+            </tr>
+            
+            </tbody>
+        </table>
+        <div class="columns">
+            <div class="field column">
+                <label class="label">Costo de los productos</label>
+                <div class="control has-icons-left">
+                    <input class="input" type="number" [(ngModel)]="cobro.totalProd" disabled>
+                    <span class="icon is-small is-left">
+                        <i class="fa-solid fa-money-bill"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="columns">
+            <div class="field column">
+                <label class="label">Total</label>
+                <div class="control has-icons-left">
+                    <input class="input" type="number" [(ngModel)]="cobro.totalFin" disabled>
+                    <span class="icon is-small is-left">
+                        <i class="fa-solid fa-money-bill"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="columns">
+            <div class="field column">
+                <div class="">
+                    <button class="btnRegresar" [routerLink] = "['/activos']">
+                        <span>
+                            <i class="fa-solid fa-arrow-left"></i>
+                            Regresar
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,56 @@
+<section class="inicio-sesion">
+
+    <div id="cuerpo-inicio-sesion">
+
+        <div id="cuadro-inicio-sesion">
+
+            <div id="logo-sesion">
+
+                <img src="./assets/images/sosefi_logo2.png">
+
+            </div>
+
+            <div id="texto-sesion">
+
+                <h1>¡Le damos la bienvenida!</h1>
+                <h2>Inicie sesión con su cuenta</h2>
+
+            </div>
+
+            <div id="forma-sesion">
+
+                    <div class="form_groupp">
+
+                        <label for="email" class="form_label">Correo electrónico</label>
+                        <input type="email" id="email" class="form_input" [(ngModel)]="usuario.email" placeholder=""> 
+                        <span class="form_line"></span>
+
+                    </div>
+
+                    <div class="form_groupp">
+
+                        <label for="password" class="form_label">Contraseña</label>
+                        <input type="password" id="password" class="form_input" [(ngModel)]="usuario.password" placeholder=""> 
+                        <span class="form_line"></span>
+
+                    </div>
+
+                    <div id="texto-sesion">
+
+                        <h2>Regresar al <a href="/inicio">menu principal</a></h2>
+        
+                    </div>
+
+                    <div id="boton">
+
+                        <button type="button" class="float" (click)="inicioSesion()">Iniciar sesión</button>
+
+                    </div>
+
+                </div>  
+
+        </div>  
+
+    </div>
+
+</section>

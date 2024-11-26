@@ -1,0 +1,137 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<link rel="stylesheet" href="/assets/css/formularios.css">
+
+<section class="inicio-servicio-inactivo">
+  
+  <div id="contenedor-servicioInac"> 
+
+    <div class="contenedor"> 
+
+        <div class="cuerpo ">
+            <!-- Aqui inicia el modulo de consultar las citas de hoy -->
+            <h1>Servicios de instalación/mantenimiento pendientes</h1>
+            <table class="table">
+            <thead>
+                <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Categoría</th>
+                <th scope="col">Correo</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">Cotizar</th>
+                <th scope="col">Cancelar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let ser of servicios | async"> 
+                <td data-label="ID &nbsp;">{{ser.idServicio}}</td>
+                <td data-label="Tipo &nbsp;">{{ser.tipo}}</td>
+                <td data-label="Categoria &nbsp;">{{ser.categoria}}</td>
+                <td data-label="Correo &nbsp;">{{ser.correo}}</td>
+                <td data-label="Descripción &nbsp;">{{ser.descripcion}}</td>
+                <td *ngIf="ser.idCotizacion==0"><button class="btnCalcular" 
+                    (click)="generarTicket(ser.idServicio)"
+                    
+                    > 
+                  <span>
+                    <i class="fa-solid fa-calculator"></i>
+                    Calcular
+                  </span>
+                </button></td>
+                <td *ngIf="ser.idCotizacion>0"><button class="btnCalcular" 
+                  [routerLink] = "['/cotizacion', ser.idServicio]" 
+                  > 
+                <span>
+                  <i class="fa-solid fa-file-invoice"></i>
+                  Cotización
+                </span>
+              </button></td>
+                <td><button class="btnCancelar" 
+                    (click)="cancelarServ(ser.idServicio)"
+                    > 
+                  <span>
+                    <i class="fa-solid fa-ban"></i>
+                    Cancelar
+                  </span>
+                </button></td>
+                </tr>
+            </tbody>
+            </table>
+            <!-- Termina el modulo de las citas de hoy -->
+        </div>
+        &nbsp;
+        <div class="cuerpo ">
+            <!-- Aqui inicia el modulo de consultar las citas de hoy -->
+            <h1>Servicios finalizados</h1>
+            <h2>Ingresa el mes y año a consultar:</h2>
+            <div class="columns">
+              <div class="field column">
+                  <label class="label">Mes</label>
+                  <div class="control has-icons-left">
+                      <input class="input" type="text"  [(ngModel)]="consulta.mes" placeholder="Ingresa solo el valor númerico">
+                      <span class="icon is-small is-left">
+                          <i class="fa-solid fa-calendar"></i>
+                      </span>
+                  </div>
+              </div>
+              <div class="field column">
+                  <label class="label">Año</label>
+                  <div class="control has-icons-left">
+                      <input class="input" type="text"  [(ngModel)]="consulta.anio">
+                      <span class="icon is-small is-left">
+                          <i class="fa-solid fa-calendar"></i>
+                      </span>
+                  </div>
+              </div>
+          </div>
+          <br>
+          <div class="columns">
+            <button class="btnCalcular" (click)="buscar()" 
+                    > 
+                  <span>
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    Buscar
+                  </span>
+                </button>
+          </div>
+          <table class="table">
+            <thead>
+                <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Correo</th>
+                <th scope="col">Fecha</th>
+                <th scope="col">Hora</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Cotizar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let ser of serviciosMes"> 
+                <td data-label="ID &nbsp;">{{ser.idServicio}}</td>
+                <td data-label="Tipo &nbsp;">{{ser.tipo}}</td>
+                <td data-label="Correo &nbsp;">{{ser.correo}}</td>
+                <td data-label="Fecha &nbsp;">{{ser.fecha}}</td>
+                <td data-label="Hora &nbsp;">{{ser.hora}}</td>
+                <td data-label="Nombre &nbsp;">{{ser.nombreCliente}}</td>
+                <td data-label="Apellido &nbsp;">{{ser.apellidoCliente}}</td>
+                <td><button class="btnCalcular" 
+                  [routerLink] = "['/detalle', ser.idServicio]" > 
+                <span>
+                  <i class="fa-solid fa-file-invoice"></i>
+                  Detalle
+                </span>
+              </button></td>
+                
+                </tr>
+            </tbody>
+            </table>
+            <!-- Termina el modulo de las citas de hoy -->
+        </div>
+        
+  </div>
+
+</div>
+
+</section>

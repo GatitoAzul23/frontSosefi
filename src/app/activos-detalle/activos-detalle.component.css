@@ -1,0 +1,9 @@
+.btnRegresar{
+    background-color: #c95009;
+    align-items: center;
+    border-radius: 10px;
+    padding: 10px;
+    
+    color: whitesmoke;
+    font-size: medium;   
+}

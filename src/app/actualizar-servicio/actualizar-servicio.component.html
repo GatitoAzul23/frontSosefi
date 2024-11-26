@@ -1,0 +1,103 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<link rel="stylesheet" href="/assets/css/formularios.css">
+<div id="main-content">
+<div class="contenedor"> 
+    <div class="encabezado ">
+        <h1>Agendar servicio</h1>
+    </div>  
+    <div class="cuerpo ">
+        <div class="columns">
+            <div class="field column">
+                <label class="label">ID del servicio</label>
+                <div class="control">
+                    <input class="input" type="text"  [(ngModel)]="servicio.idServicio" disabled>
+                </div>
+            </div>
+            
+            <div class="field column">
+                <label class="label">Correo</label>
+                <div class="control has-icons-left">
+                    <input class="input" type="text"  [(ngModel)]="servicio.correo"  disabled>
+                    <span class="icon is-small is-left">
+                        <i class="fa-solid fa-envelope"></i>
+                    </span>
+                </div>
+            </div>
+            
+        </div>
+        <div class="columns">
+            <div class="field column">
+                <label class="label">Nombre del cliente</label>
+                <div class="control has-icons-left">
+                    <input class="input" type="text"  [(ngModel)]="servicio.nombreCliente" disabled>
+                    <span class="icon is-small is-left">
+                        <i class="fa-solid fa-user"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="field column">
+                <label class="label">Apellido del cliente</label>
+                <div class="control has-icons-left">
+                    <input class="input" type="text"  [(ngModel)]="servicio.apellidoCliente" disabled>
+                    <span class="icon is-small is-left">
+                        <i class="fa-solid fa-user"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="columns">
+            <div class="field column">
+                <label class="label">Fecha</label>
+                <div class="control has-icons-left">
+                    <input class="input" type="date"  [(ngModel)]="servicio.fecha">
+                    <span class="icon is-small is-left">
+                        <i class="fa-solid fa-calendar"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="field column">
+                <label class="label">Hora</label>
+                <div class="control has-icons-left">
+                    <input class="input" type="text"  [(ngModel)]="servicio.hora">
+                    <span class="icon is-small is-left">
+                        <i class="fa-solid fa-clock"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="columns">
+            <div class="field column">
+                <label class="label">Domicilio</label>
+                <div class="control has-icons-left">
+                    <input class="input" type="text"  [(ngModel)]="servicio.lugar">
+                    <span class="icon is-small is-left">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="columns">
+            <div class="field column">
+                <div>
+                    <button class="btnCalcular" (click)="agendar()">
+                        <span>
+                            <i class="fa-solid fa-check"></i>
+                            Completar
+                        </span>
+                    </button>
+                </div>
+            </div>
+            <div class="field column">
+                <div class="">
+                    <button class="btnRegresar" [routerLink] = "['/servInac']">
+                        <span>
+                            <i class="fa-solid fa-arrow-left"></i>
+                            Regresar
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

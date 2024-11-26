@@ -1,0 +1,39 @@
+#logoI{
+    height: 100px;
+    align-items: center;
+    float: left;
+    padding-top: auto;
+}
+
+.btnRegresar{
+    background-color: #c95009;
+    align-items: center;
+    border-radius: 10px;
+    padding: 10px;
+    
+    color: whitesmoke;
+    font-size: medium;   
+}
+.btnCalcular{
+    background-color: #03506F;
+    align-items: center;
+    border-radius: 10px;
+    padding: 10px;
+   
+    color: whitesmoke;
+    font-size: medium;   
+}
+#grafica{
+    height: 400px;
+    width: 700px;
+}
+
+.btnImprimir{
+    background-color: #57A6A1;
+    align-items: center;
+    border-radius: 10px;
+    padding: 10px;
+    
+    color: whitesmoke;
+    font-size: medium;   
+}

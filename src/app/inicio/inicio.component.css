@@ -1,0 +1,15 @@
+
+
+@media(max-width:1010px){
+
+    #seguridad p{
+        font-size: 30px;
+    }
+}
+    
+@media(max-width:780px){
+
+    #seguridad p{
+        font-size: 20px;
+    }
+}

@@ -1,0 +1,143 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.inicio-sesion{
+    width: 100%;
+    justify-content: center;
+    height: 850px;
+    display: flex;
+    flex-wrap: wrap;
+    background: linear-gradient(to bottom right, rgb(27, 27, 70), rgb(4, 4, 12));
+}
+
+#cuerpo-inicio-sesion{
+    padding: 25px;
+    margin: 25px;
+}
+ 
+#cuadro-inicio-sesion{
+    position: relative;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    background-color: #fff;
+    margin-top: 35px;
+    max-height: 640px;
+    max-width: 500px;
+    padding: 2.5em 3em;
+    border-radius: 10px;
+    box-shadow: 6px 8px 10px 8px rgb(0 0 0 / 30%);  
+}
+
+#logo-sesion{
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    border-radius: 40%;
+}
+
+#texto-sesion h1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 28px;
+    font-style: bold;
+}
+
+#texto-sesion h2{
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#texto-sesion a{
+    color: #03506F;
+}
+
+#texto-sesion a:hover{
+    color: #c95009;
+}
+
+#forma-sesion{
+    margin-top: 1em;
+    display: grid;
+    gap: 2em;
+}
+
+#form_title{
+    font-size: large;
+    margin-bottom: .5em;
+}
+
+
+.form_group{
+    position: center;
+    color: #5757577e;
+}
+
+input{
+    width: 100%;
+    background-color: #e9f0f0;
+    color: #706c6c;
+    font-size: medium;
+    padding: .6em .3em;
+    border-color: #fff;
+    outline: #fff;
+    transition: border .5s;
+}
+
+input:focus{
+        background-color: #ffffff;
+}
+
+.float{
+    transition: .5s, color .10s;
+    -webkit-transition: .5s, color .10s;
+    -moz-transition: .5s, color .10s;
+}
+
+button{
+    background-color: #c95009;
+    align-items: center;
+    border-radius: 10px;
+    padding: 10px;
+    width: 180px;
+    height: 40px;
+    color: whitesmoke;
+    font-size: medium;   
+}
+
+img{
+    width: 70%;
+    height: 40%;
+    padding-bottom: 20px;
+    }
+
+
+
+label{
+    font-size: medium;
+    text-align: start;
+    padding: .4em .2em;
+}     
+
+@media(max-width:991px){
+
+    .inicio-sesion{
+        padding: 5%;
+        padding-top: 0%;
+        align-items: center;
+        text-align: center;
+        padding-bottom: auto;
+    }
+
+    #cuerpo-inicio-sesion{
+        padding-top: 20%;
+    }
+
+    button{
+        width: 110px;
+        height: 35px;
+        font-size: small;   
+    }
+    
+}

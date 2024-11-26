@@ -1,0 +1,128 @@
+<link rel="stylesheet" href="/assets/css/formularios.css">
+
+<section class="inicio-asesoriaForm">
+
+    <div id="contenedor-asesorias">
+
+            <div id="cuerpo-asesorias">
+
+            <h1>Registrar una asesoría</h1>
+            <p>Favor de llenar el formulario con tus datos.</p>
+
+                <div class="field ">
+
+                    <label class="label">Primer nombre</label>
+                    <div class="control">
+
+                    <input class="input" type="text" [(ngModel)]="asesoria.nombreCliente">
+ 
+                    </div>
+
+                </div>
+
+                <div class="field ">
+
+                    <label class="label">Apellido Paterno</label>
+                    <div class="control">
+
+                    <input class="input" type="text" [(ngModel)]="asesoria.apellidoCliente">
+ 
+                    </div>
+
+                </div>
+            
+            <div class="field">
+
+                <label class="label">Correo electronico</label>
+
+                <div class="control">
+
+                    <input class="input" type="text" [(ngModel)]="asesoria.correo">
+
+                </div>
+
+            </div>
+
+            <div class="field">
+
+                <label class="label">Codigo del producto</label>
+
+                <div class="control">
+
+                    <input class="input" type="text" [(ngModel)]="asesoria.numeroProd" disabled />
+                    
+                </div>
+
+            </div>
+
+            <div class="field">
+
+                <label class="label">Nombre del producto</label>
+
+                <div class="control">
+
+                    <input class="input" type="text" [(ngModel)]="asesoria.nombreProd" disabled />
+                    
+                </div>
+
+            </div>
+
+            <div class="field">
+
+                <label class="label">Modelo</label>
+
+                <div class="control">
+
+                    <input class="input" type="text" [(ngModel)]="asesoria.modeloProd" disabled />
+                    
+                </div>
+
+            </div>
+
+            <div class="field">
+
+                <label class="label">¿Cual es tu duda?</label>
+
+                <div class="control has-icons-left">
+
+                    <textarea class="textarea " [(ngModel)]="asesoria.descripcion"></textarea>
+
+                </div>
+
+            </div>
+
+            <h3>Nota: Debes verificar que tengas acceso al correo electronico que estes registrando.</h3>
+
+            <div class="field columns">
+
+                <div class="column">
+
+                    <button class="btnAceptar" (click)="enviar()" >
+
+                    <span>
+                        Enviar
+                    </span>
+
+                    </button>
+
+                    &nbsp;
+
+                    <button class="btnRegresar" routerLink="/asesorias">
+
+                        <span>
+                            Regresar
+                        </span>
+
+                    </button>
+
+                </div> 
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<app-leyenda></app-leyenda>

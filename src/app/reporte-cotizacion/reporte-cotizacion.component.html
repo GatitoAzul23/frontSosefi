@@ -1,0 +1,117 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<link rel="stylesheet" href="/assets/css/formularios.css">
+
+
+<div id="main-content">
+    <div class="contenedor"> 
+        <div class="encabezado ">
+            <h1>Reporte de Ventas</h1>
+        </div>  
+        <div class="cuerpo ">
+            <div class="columns">
+                <div class="field column">
+                    <img src="./assets/images/sosefi_logo2.png" id="logoI">
+                </div>
+                
+            </div>
+            <div class="columns">
+                <div class="field column">
+                    <h1>Reporte de ventas</h1>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="field column">
+                    <h2>Ingresa el periodo:</h2>
+                </div>
+            </div>
+            <div class="columns">
+                
+            </div>
+            <div class="columns">
+                <div class="field column">
+                    <label class="label">Mes</label>
+                    <div class="control has-icons-left">
+                        <input class="input" type="text"  [(ngModel)]="consulta.mes" placeholder="Ingresa solo el valor númerico">
+                        <span class="icon is-small is-left">
+                            <i class="fa-solid fa-calendar"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="field column">
+                    <label class="label">Año</label>
+                    <div class="control has-icons-left">
+                        <input class="input" type="text"  [(ngModel)]="consulta.anio">
+                        <span class="icon is-small is-left">
+                            <i class="fa-solid fa-calendar"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="">
+                    <button class="btnCalcular" (click)="buscar()">
+                        <span>
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            Buscar
+                        </span>
+                    </button>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="field column">
+                    <h2>Información obtenida:</h2>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="field column">
+                    <label class="label">Total de cotizaciones realizadas:</label>
+                    <div class="control has-icons-left">
+                        <input class="input" type="number" [ngModel]="reporteCoti.numero"  disabled>
+                        <span class="icon is-small is-left">
+                            <i class="fa-solid fa-hashtag"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="field column">
+                    <label class="label">Costo total de los servicios:</label>
+                    <div class="control has-icons-left">
+                        <input class="input" type="text" [ngModel]="reporteCoti.total" disabled>
+                        <span class="icon is-small is-left">
+                            <i class="fa-solid fa-tag"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="field column">
+                    <label class="label">Gasto total en recursos:</label>
+                    <div class="control has-icons-left">
+                        <input class="input" type="text" [ngModel]="reporteCoti.productos" disabled>
+                        <span class="icon is-small is-left">
+                            <i class="fa-solid fa-money-bill-wave"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="field column">
+                    <label class="label">Ganancia total:</label>
+                    <div class="control has-icons-left">
+                        <input class="input" type="number" [ngModel]="reporteCoti.ganancia" disabled>
+                        <span class="icon is-small is-left">
+                            <i class="fa-solid fa-money-bill-wave"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="">
+                    <button class="btnRegresar" [routerLink] = "['/dashboard']">
+                        <span>
+                            <i class="fa-solid fa-arrow-left"></i>
+                            Regresar
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>    
+    </div>
+</div>

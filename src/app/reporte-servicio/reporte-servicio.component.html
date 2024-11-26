@@ -1,0 +1,161 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<link rel="stylesheet" href="/assets/css/formularios.css">
+
+
+<div id="main-content">
+    <div class="contenedor"> 
+        <div class="encabezado ">
+            <h1>Reporte de Ventas</h1>
+        </div>  
+        <div class="cuerpo ">
+            <div class="columns">
+                <div class="field column">
+                    <img src="./assets/images/sosefi_logo2.png" id="logoI">
+                </div>
+                
+            </div>
+            <div class="columns">
+                <div class="field column">
+                    <h1>Reporte de ventas</h1>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="field column">
+                    <h2>Ingresa el periodo:</h2>
+                </div>
+            </div>
+            <div class="columns">
+                
+            </div>
+            <div class="columns">
+                <div class="field column">
+                    <label class="label">Mes</label>
+                    <div class="control has-icons-left">
+                        <input class="input" type="text"  [(ngModel)]="consulta.mes" placeholder="Ingresa solo el valor númerico">
+                        <span class="icon is-small is-left">
+                            <i class="fa-solid fa-calendar"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="field column">
+                    <label class="label">Año</label>
+                    <div class="control has-icons-left">
+                        <input class="input" type="text"  [(ngModel)]="consulta.anio">
+                        <span class="icon is-small is-left">
+                            <i class="fa-solid fa-calendar"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="field column">
+                    <button class="btnCalcular" (click)="buscar()">
+                        <span>
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            Buscar
+                        </span>
+                    </button>
+                </div>
+            </div>
+            <br>
+            <div class="columns">
+                <div class="field column">
+                    <h2>Información obtenida:</h2>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="field column">
+                    <label class="label">Total de servicios realizadas:</label>
+                    <div class="control has-icons-left">
+                        <input class="input" type="number" [ngModel]="reporteServ.totalServis"  disabled>
+                        <span class="icon is-small is-left">
+                            <i class="fa-solid fa-hashtag"></i>
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="columns">
+                <div class="field column">
+                    <label class="label">Total de instalaciones de cercas eléctricas</label>
+                    <div class="control has-icons-left">
+                        <input class="input" type="text" [ngModel]="reporteServ.totalCercas" disabled>
+                        <span class="icon is-small is-left">
+                            <i class="fa-solid fa-bolt"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="field column">
+                    <label class="label">Total de instalaciones de cámaras de seguridad</label>
+                    <div class="control has-icons-left">
+                        <input class="input" type="text" [ngModel]="reporteServ.totalCamaras" disabled>
+                        <span class="icon is-small is-left">
+                            <i class="fa-solid fa-camera"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="field column">
+                    <label class="label">Total de instalaciones de video porteros</label>
+                    <div class="control has-icons-left">
+                        <input class="input" type="text" [ngModel]="reporteServ.totalPortero" disabled>
+                        <span class="icon is-small is-left">
+                            <i class="fa-solid fa-tachograph-digital"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="field column">
+                    <label class="label">Total de instalaciones de accesos de seguridad</label>
+                    <div class="control has-icons-left">
+                        <input class="input" type="text" [ngModel]="reporteServ.totalAcceso" disabled>
+                        <span class="icon is-small is-left">
+                            <i class="fa-solid fa-house-lock"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="columns"  *ngFor="let may of mayor">
+                <div class="field column">
+                    <label class="label">Servicio con mayor demanda.</label>
+                    <div class="control has-icons-left">
+                        <input class="input" type="text" value="{{may}}" disabled>
+                        <span class="icon is-small is-left">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="field column">
+                    <div id="grafica">
+                        <label class="label">Gráfico</label>
+                        <canvas id="canvas"></canvas>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="columns">
+                <div class="field column">
+                    <button class="btnRegresar" [routerLink] = "['/dashboard']">
+                        <span>
+                            <i class="fa-solid fa-arrow-left"></i>
+                            Regresar
+                        </span>
+                    </button>
+                </div>
+                <div class="field column">
+                    <div>
+                        <button class="btnImprimir">
+                            <span>
+                                <i class="fa-solid fa-print"></i>
+                                Imprimir
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </div>
+</div>

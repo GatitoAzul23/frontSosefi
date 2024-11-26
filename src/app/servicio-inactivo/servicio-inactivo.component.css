@@ -1,0 +1,88 @@
+.inicio-servicio-inactivo{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#contenedor-servicioInac{
+    padding: 25px;
+    margin: 25px;
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btnCalcular{
+    background-color: #03506F;
+    align-items: center;
+    border-radius: 10px;
+    padding: 10px;
+   
+    color: whitesmoke;
+    font-size: medium;   
+}
+
+.btnCancelar{
+    background-color: #c95009;
+    align-items: center;
+    border-radius: 10px;
+    padding: 10px;
+    
+    color: whitesmoke;
+    font-size: medium;   
+}
+
+@media(max-width:1115px){
+
+    .table{
+        padding: 0px;
+    }
+
+    .table caption{
+        font-size: 22px;
+    }
+
+    .table thead{
+        display: none;
+    }
+
+    .table tr{
+        margin-bottom: 8px;
+        border-bottom: 1px solid #c95009;
+        display: block;
+    }
+    
+    .table th, table td{
+        font-size: 12px;
+    }
+
+    .table td{
+        display: block;
+        text-align: right;
+        border-bottom: 1px solid #b2b0af;
+    }
+
+    .table td::before{
+        content: attr(data-label);
+        font-weight: bold;
+        text-transform: uppercase;
+        float: left;
+        margin-left: 10px;
+    }
+
+    #contenedor-servicioInac{
+        padding: 10px;
+        margin: 10px;
+        margin-top: 20%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .cuerpo{
+        width: auto;
+        margin-left: auto;
+        margin-left: auto;
+        width: 400px;
+   
+        
+    }
+}

@@ -1,0 +1,34 @@
+<app-menu></app-menu>
+
+<section class="inicio-asesorias">
+
+    <div id="contenido-inicio">
+
+        <p>
+        Es necesario seleccionar un producto de la siguiente lista. Favor de elegir solo un producto antes de llenar el formulario.
+        </p>
+
+    </div>
+
+    <div class="producto-contenedor">
+
+    <div  *ngFor="let pro of productos 
+    | paginate: { itemsPerPage: 5, currentPage: page } | async  " class="product-card">
+
+        <img src="{{pro.imgurl}}" alt="" width="100px" height="100px">
+        <h3>{{ pro.codigo }}</h3>
+        <h3>{{ pro.nombre }}</h3>
+
+        <h3>{{ pro.modelo }}</h3>
+
+        <p>{{ pro.marca }}</p>
+
+        <button  [routerLink] = "['/asesoriasForm', pro.codigo]">Seleccionar</button>
+
+    </div>
+
+    </div>
+
+</section>
+
+<app-leyenda></app-leyenda>

@@ -1,0 +1,162 @@
+<link rel="stylesheet" href="/assets/css/formularios.css">
+
+<section class="inicio-serviciosForm">
+
+        <div id="contenedor-servicies"> 
+
+            <div id="cuerpo-servicies">
+
+                <h1>Registrar un servicio</h1>
+                <p>Favor de llenar el formulario con tus datos.</p>
+
+                <div class="field">
+
+                    <label class="label">Primer nombre</label>
+
+                    <div class="control">
+
+                        <input class="input" type="text" [(ngModel)]="servicio.nombreCliente">
+
+                    </div>
+
+                </div>
+
+                <div class="field">
+
+                    <label class="label">Apellido Paterno</label>
+
+                    <div class="control">
+
+                        <input class="input" type="text" [(ngModel)]="servicio.apellidoCliente">
+
+                    </div>
+
+                </div>
+                
+                <div class="field">
+
+                    <label class="label">Correo electrónico</label>
+
+                    <div class="control">
+
+                        <input class="input" type="text" [(ngModel)]="servicio.correo">
+
+                    </div>
+
+                </div>
+    
+    
+                <!-- <div class="field">
+
+                    <label class="label" for="tipo-input">Tipo de servicio</label>
+
+                    <div class="control input-container">
+
+                        <input id="tipo-input" class="input" type="text" list="tipo-list" placeholder="Selecciona un servicio" [(ngModel)]="servicio.tipo"/>
+
+                        <datalist id="tipo-list">
+
+                            <option value="Instalación"></option>
+
+                            <option value="Mantenimiento"></option>
+
+                        </datalist>
+
+                    </div>
+
+                </div> -->
+                <div class="field">
+                    <label class="label" for="tipo-input">Tipo de servicio</label>
+                    <div class="control input-container">
+                        <select id="cat-input" class="input" [(ngModel)]="servicio.categoria">
+                            <option value="" disabled selected>Selecciona una categoría</option>
+                            <option value="Mantenimiento">Mantenimiento</option>
+                            <option value="Instalacion">Instalación</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- <div class="field">
+
+                    <label class="label" for="tipo-input">Categoría del servicio</label>
+
+                    <div class="control input-container">
+
+                        <input id="cat-input" class="input" type="text" list="cat-list" placeholder="Selecciona una categoría" [(ngModel)]="servicio.categoria"/>
+
+                        <datalist id="cat-list">
+
+                            <option value="Cerca electrificada"></option>
+
+                            <option value="Cámaras de seguridad"></option>
+
+                            <option value="Video portero"></option>
+
+                            <option value="Otro: especificar en la descripción."></option>
+
+                        </datalist>
+
+                    </div>
+
+                </div> -->
+                <div class="field">
+                    <label class="label" for="tipo-input">Categoría del servicio</label>
+                    <div class="control input-container">
+                        <select id="cat-input" class="input" [(ngModel)]="servicio.categoria">
+                            <option value="" disabled selected>Selecciona una categoría</option>
+                            <option value="Cerca electrificada">Cerca electrificada</option>
+                            <option value="Camaras de seguridad">Cámaras de seguridad</option>
+                            <option value="Video portero">Video portero</option>
+                            <option value="Acceso de seguridad">Acceso de seguridad</option>
+                            <option value="Otro">Otro: especificar en la descripción.</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="field">
+
+                    <label class="label">Descripción</label>
+
+                    <div class="control has-icons-left">
+
+                        <textarea class="textarea " [(ngModel)]="servicio.descripcion"></textarea>
+
+                    </div>
+
+                </div>
+
+                <h3>Nota: Debes verificar que tengas acceso al correo electronico que estes registrando.</h3>
+
+                <div class="field columns">
+
+                    <div class="column">
+
+                        <button class="btnAceptar" (click)="crearNuevo()">
+
+                        <span>
+                            Enviar
+                        </span>
+
+                        </button>
+
+                        &nbsp;
+
+                        <button class="btnRegresar" routerLink="/inicio">
+
+                            <span>
+                                Regresar
+                            </span>
+
+                        </button>
+
+                    </div> 
+
+                </div>
+
+            </div>
+
+        </div>
+
+</section>
+
+<app-leyenda></app-leyenda>

@@ -1,0 +1,35 @@
+.inicio-perfil{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.cuerpo{
+    border-color: #15417D;
+    width: 800px;
+}
+
+#contenedor-perfil{
+    padding: 25px;
+    margin: 25px;
+    margin-top: 8%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media(max-width:991px){
+
+    #contenedor-perfil{
+        padding: 10px;
+        margin: 10px;
+        margin-top: 20%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .cuerpo{
+        width: 500px;
+        margin-left: auto;
+        margin-left: auto;
+    }
+}

@@ -1,0 +1,62 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<link rel="stylesheet" href="/assets/css/formularios.css">
+
+<section class="inicio-servicio-inactivo">
+    <div style="height: 100px;">
+
+    </div>
+
+    <div id="contenedor-servicioInac"> 
+
+        <div class="contenedor"> 
+
+        <div class="cuerpo ">
+            <!-- Aqui inicia el modulo de consultar las citas de hoy -->
+            <h1>Asesorías pendientes</h1>
+            <table class="table">
+            <thead>
+                <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Correo</th>
+                <th scope="col">Producto</th>
+                <th scope="col">Modelo</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">Finalizar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let ase of asesorias | async"> 
+                <td data-label="ID &nbsp;">{{ase.idAsesoria}}</td>
+                <td data-label="Tipo &nbsp;">{{ase.nombreCliente}}</td>
+                <td data-label="Categoria &nbsp;">{{ase.apellidoCliente}}</td>
+                <td data-label="Correo &nbsp;">{{ase.correo}}</td>
+                <td data-label="Correo &nbsp;">{{ase.nombreProd}}</td>
+                <td data-label="Correo &nbsp;">{{ase.modeloProd}}</td>
+                <td data-label="Descripción &nbsp;">{{ase.descripcion}}</td>
+                <!-- <td><button class="btnCalcular" > 
+                    <span>
+                    <i class="fa-solid fa-file"></i>
+                    Detalle
+                    </span>
+                    </button></td> -->
+                    
+                    <td><button class="btnCancelar" 
+                        (click)="terminarAsesoria(ase.idAsesoria)"
+                        > 
+                    <span>
+                        <i class="fa-solid fa-check"></i>
+                        Terminar
+                    </span>
+                    </button></td>
+                    </tr>
+                </tbody>
+                </table>
+                <!-- Termina el modulo de las citas de hoy -->
+            </div>
+        
+        </div>
+
+    </div>
+</section>

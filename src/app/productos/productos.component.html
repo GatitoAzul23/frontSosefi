@@ -1,0 +1,111 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<link rel="stylesheet" href="/assets/css/formularios.css">
+
+
+<section class="inicio-productos">
+
+  <div id="contenedor-productos">
+    <div class="contenedor"> 
+      <div class="cuerpo ">
+        <div class="field ">
+          <h1>Registrar producto</h1>
+          &nbsp;
+          <label class="label">Nombre</label>
+          <div class="control has-icons-left">
+              <input class="input" type="text" placeholder="Nombre del producto" [(ngModel)]="producto.nombre">
+          </div>
+        </div>
+        <div class="columns">
+          <div class="field column ">
+            <label class="label">Marca</label>
+            <div class="control has-icons-left">
+                <input class="input" type="text" placeholder="Nombre del producto" [(ngModel)]="producto.marca">
+            </div>
+          </div>
+          <div class="field column">
+            <label class="label">Modelo</label>
+            <div class="control has-icons-left">
+                <input class="input" type="text" placeholder="Nombre del producto" [(ngModel)]="producto.modelo">
+            </div>
+          </div>
+        </div>
+  
+        <div class="columns">
+            <div class="field column">
+                <label class="label">Precio</label>
+                <div class="control has-icons-left">
+                    <input class="input" type="number"  [(ngModel)]="producto.precio">
+                    <span class="icon is-small is-left">
+                        <i class="fa-solid fa-dollar-sign"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="field column">
+                <label class="label">Código</label>
+                <div class="control has-icons-left">
+                    <input class="input" type="number" placeholder="Código del producto" [(ngModel)]="producto.codigo">
+                    <span class="icon is-small is-left">
+                        <i class="fa-solid fa-tag"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+          
+          <div class="field">
+            <label class="label">Imagen</label>
+            <div class="control has-icons-left">
+              <!-- <img src="[(ngmodel)]="producto.imgurl"" alt=""> -->
+              <input type="file" id="imagen" name="imagen" [(ngModel)]="producto.imgurl"
+              accept="image/png, image/jpeg, image/gif" (change)="fotoseleccionada($event)" >
+            </div>
+            <!-- <div *ngIf="producto.imgurl!=''; else otraimg">
+                <img src="{{producto.imgurl}}" alt="" width="100" height="100">
+            </div>
+            <ng-template #otraimg>
+              <img src="../../assets/images/camara.png" alt="" width="100" height="100">
+          </ng-template> -->
+        </div>
+          <br>
+          <div class="field" id="boton">
+              <div class="">
+                  <button class="btnAceptar" (click)="guardarProducto()">
+                      <span>
+                      <i class="fa-solid fa-pencil"></i>
+                      Registrar
+                      </span>
+                  </button>
+              </div>
+          </div>
+          <!-- inicio de la tabla -->
+          <br><br>
+          <h1>Productos existentes</h1>
+          <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Precio</th>
+                  <th scope="col">Código</th>
+                  <th scope="col">Modelo</th>
+                  <th scope="col">Marca</th>
+                  <th scope="col">Imagen</th>
+                </tr>
+              </thead>
+              <tbody>
+               <tr *ngFor="let pro of productos 
+                | paginate: { itemsPerPage: 5, currentPage: page } | async  "> 
+                  <td data-label="Nombre &nbsp;">{{pro.nombre}}</td>
+                  <td data-label="Precio &nbsp;">{{pro.precio}}</td>
+                  <td data-label="Codigo &nbsp;">{{pro.codigo}}</td>
+                  <td data-label="Modelo &nbsp;">{{pro.modelo}}</td>
+                  <td data-label="Marca &nbsp;">{{pro.marca}}</td>
+                  <td data-label="Imagen &nbsp;"><img src="{{pro.imgurl}}" alt="" width="100px" height="100px"></td>
+                  <td data-label="Detalle &nbsp;"><a href="" [routerLink] = "['/productos/codigo', pro.codigo]">Detalle</a></td>
+                </tr>
+              </tbody>
+            </table>  
+      </div>
+    </div>
+  </div>
+  
+
+</section>

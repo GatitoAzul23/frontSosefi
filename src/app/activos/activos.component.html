@@ -1,0 +1,58 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<link rel="stylesheet" href="/assets/css/formularios.css">
+<div id="main-content">
+
+    <div class="contenedor"> 
+      
+        <div class="encabezado ">
+            <h1 class="titulo">Servicios</h1>
+        </div>  
+        <div class="borde ">
+            <!-- Aqui inicia el modulo de consultar las citas de hoy -->
+            <h1>Servicios de instalación/mantenimiento en proceso</h1>
+            <table class="table">
+            <thead>
+                <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Correo</th>
+                <th scope="col">Fecha</th>
+                <th scope="col">Hora</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Cotizar</th>
+                <th scope="col">Finalizar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let ser of servicios | async"> 
+                <th>{{ser.idServicio}}</th>
+                <td>{{ser.tipo}}</td>
+                <td>{{ser.correo}}</td>
+                <td>{{ser.fecha}}</td>
+                <td>{{ser.hora}}</td>
+                <td>{{ser.nombreCliente}}</td>
+                <td>{{ser.apellidoCliente}}</td>
+                <td><button class="btnCalcular" 
+                  [routerLink] = "['/detalle', ser.idServicio]" > 
+                <span>
+                  <i class="fa-solid fa-file-invoice"></i>
+                  Cotización
+                </span>
+              </button></td>
+                <td><button class="btnCancelar" 
+                    (click)="finalizar(ser.idServicio)"
+                    > 
+                  <span>
+                    <i class="fa-solid fa-ban"></i>
+                    Finalizar
+                  </span>
+                </button></td>
+                </tr>
+            </tbody>
+            </table>
+            <!-- Termina el modulo de las citas de hoy -->
+        </div>
+  </div>
+</div>
+

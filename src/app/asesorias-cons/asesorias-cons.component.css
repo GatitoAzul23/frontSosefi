@@ -1,0 +1,39 @@
+.btnCalcular{
+    background-color: #03506F;
+    align-items: center;
+    border-radius: 10px;
+    padding: 10px;
+   
+    color: whitesmoke;
+    font-size: medium;   
+}
+
+.btnRegresar{
+    background-color: #c95009;
+    align-items: center;
+    border-radius: 10px;
+    padding: 10px;
+    
+    color: whitesmoke;
+    font-size: medium;   
+}
+
+.btnCancelar{
+    background-color: #A0153E;
+    align-items: center;
+    border-radius: 10px;
+    padding: 10px;
+    
+    color: whitesmoke;
+    font-size: medium;   
+}
+
+.btnImprimir{
+    background-color: #57A6A1;
+    align-items: center;
+    border-radius: 10px;
+    padding: 10px;
+    
+    color: whitesmoke;
+    font-size: medium;   
+}

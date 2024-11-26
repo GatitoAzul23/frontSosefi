@@ -1,0 +1,33 @@
+.encabezado{
+    width: 800px;
+    font-size: xx-large;
+    padding-bottom: 25px;
+    padding-top: 10px;
+    
+}
+
+.cuerpo{
+    width: 1000px;
+    height: 100%;
+    padding-bottom: 15px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: #e77634;
+    border-radius: 10px;
+    padding: 20px;
+}
+.contenedor{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    height: auto;
+    padding-bottom: 15px;
+}
+
+#boton{
+    justify-content: center;
+    align-items: center;
+    width: 800px;
+}
+

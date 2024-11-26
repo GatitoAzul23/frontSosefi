@@ -1,0 +1,7 @@
+<div *ngIf="ServicioLogin.eslogueado(), else falso">
+    <div style="padding: 15px;"></div>
+    <app-sidebar></app-sidebar>
+</div>
+<ng-template #falso>
+    <app-menu></app-menu>
+</ng-template>
