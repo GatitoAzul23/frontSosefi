@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="/assets/css/formularios.css">
 
 
-<div id="main-content">
+<div id="main-content" #content>
     <div class="contenedor"> 
         <div class="encabezado ">
             <h1>Reporte de Ventas</h1>
@@ -103,13 +103,24 @@
                 </div>
             </div>
             <div class="columns">
-                <div class="">
+
+                <div class="field column">
                     <button class="btnRegresar" [routerLink] = "['/dashboard']">
                         <span>
                             <i class="fa-solid fa-arrow-left"></i>
                             Regresar
                         </span>
                     </button>
+                </div>
+                <div class="field column">
+                    <div>
+                        <button class="btnImprimir" (click)="generatePDF()">
+                            <span>
+                                <i class="fa-solid fa-print"></i>
+                                Imprimir
+                            </span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>    

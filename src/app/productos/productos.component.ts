@@ -35,6 +35,8 @@ export class ProductosComponent implements OnInit{
     }
   }
 
+  
+
   guardarProducto(){
     this.productoServicio.guardar(
       this.producto.codigo,

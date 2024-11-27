@@ -1,10 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { CobroService } from '../servicios/cobro.service';
 import { ProductosService } from '../servicios/productos.service';
 import { ServiService } from '../servicios/servi.service';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Router } from '@angular/router';
+
 import Swal from 'sweetalert2';
+//Para crear PDFS
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
+
 
 @Component({
   selector: 'app-cotizacion-registro',
@@ -12,11 +17,15 @@ import Swal from 'sweetalert2';
   styleUrls: ['./cotizacion-registro.component.css']
 })
 export class CotizacionRegistroComponent {
+  @ViewChild('content', { static: false }) content!: ElementRef;
+
   constructor(private servicioCobros :CobroService, 
     private serivcioServi: ServiService, 
     private productoServicio : ProductosService,
     private rutaActiva: ActivatedRoute,
     private router:Router){}
+
+    
 
   servicios:any;
   servicio={
@@ -77,8 +86,6 @@ export class CotizacionRegistroComponent {
     console.log(this.productos);
   }
 
-  
-
   agregar(){
     this.servicioCobros.agregar(this.cobro).subscribe(
       res=>{
@@ -124,5 +131,29 @@ export class CotizacionRegistroComponent {
         });
       }
     );
+  }
+  public generatePDF(): void {
+    html2canvas(this.content.nativeElement).then((canvas) => {
+      const imgData = canvas.toDataURL('image/png');
+      const pdf = new jsPDF();
+      const imgWidth = 190;
+      const pageHeight = pdf.internal.pageSize.height;
+      const imgHeight = (canvas.height * imgWidth) / canvas.width;
+      let heightLeft = imgHeight;
+
+      let position = 0;
+
+      pdf.addImage(imgData, 'PNG', 10, position, imgWidth, imgHeight);
+      heightLeft -= pageHeight;
+
+      while (heightLeft >= 0) {
+        position = heightLeft - imgHeight;
+        pdf.addPage();
+        pdf.addImage(imgData, 'PNG', 10, position, imgWidth, imgHeight);
+        heightLeft -= pageHeight;
+      }
+      
+      pdf.save('cotización'+this.cobro.idCotizacion+'.pdf');
+    });
   }
 }

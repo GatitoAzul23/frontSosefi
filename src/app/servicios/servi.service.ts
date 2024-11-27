@@ -8,9 +8,9 @@ import { Observable } from 'rxjs';
 })
 export class ServiService {
 url = "https://apirest-q96w.onrender.com/service";
-//urlReporte= "https://apirest-q96w.onrender.com/reportes";
+urlReporte= "https://apirest-q96w.onrender.com/reportes";
 
-urlReporte= "http://localhost:4000/reportes";
+//urlReporte= "http://localhost:4000/reportes";
 //url = "http://localhost:4000/service";
   constructor(private router:Router, private http:HttpClient) { }
 
