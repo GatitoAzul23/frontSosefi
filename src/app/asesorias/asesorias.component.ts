@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductosService } from '../servicios/productos.service';
-import { ProductoDataService } from '../servicios/producto-data.service';
 
 @Component({
   selector: 'app-asesorias',
@@ -22,12 +21,8 @@ export class AsesoriasComponent implements OnInit{
     
   }
 
-  constructor(private productoServicio: ProductosService, 
-    private ProductoData: ProductoDataService){}
+  constructor(private productoServicio: ProductosService){}
 
-  // selectProduct(productName: string, modelo:string, numero:string) {
-  //   this.ProductoData.setSelectedProduct(productName, modelo, numero);
-  // }
 
   ngOnInit(): void{
     this.consultarTodoPro();
@@ -37,16 +32,6 @@ export class AsesoriasComponent implements OnInit{
     this.productos = this.productoServicio.consultarTodo();
   }
 
-  // buscarProducto(numero:string){
-  //   this.productoServicio.consultar(numero).subscribe(
-  //     res=>{
-  //       this.router.navigate(['/cotizar', idServicio]);
-  //     },
-  //     err=>{
-
-  //     }
-  //   );
-  // }
 
 
 }
