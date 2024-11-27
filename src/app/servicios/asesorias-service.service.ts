@@ -20,5 +20,9 @@ export class AsesoriasServiceService {
     return this.http.get<any>(this.url+'/consultar');
   }
 
+  cancelar(idAsesoria: number){
+    return this.http.put<any>(`${this.url}/finalizar`, { idAsesoria });
+  }
+
   
 }

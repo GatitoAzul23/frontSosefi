@@ -25,7 +25,23 @@ export class AsesoriasConsComponent {
     this.asesorias =this.asesoriasService.consultarTodo()
   }
 
-  terminarAsesoria(idAsesoria: number){
-
-  }
+  terminarAsesoria(idAsesoria: number) {
+    this.asesoriasService.cancelar(idAsesoria).subscribe(
+        res => {
+          Swal.fire({
+            title: 'Asesoria finalizada exitosamente',
+            icon: 'success',
+            timer: 2000,
+          });
+            this.consultarTodo(); // Llama a la función para actualizar la lista si es necesario
+        },
+        err => {
+          Swal.fire({
+            title: 'Algo salio mal',
+            icon: 'error',
+            timer: 2000,
+          });
+        }
+    );
+}
 }
